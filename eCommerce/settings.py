@@ -26,7 +26,7 @@ MEDIA_DIR = os.path.join(BASE_DIR,'media')
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECURITY_KEY')
+SECRET_KEY = os.environ.get('SECURITY_KEY', 'ba&by@8snpxvgldfd8sxvaf316acs8+3@-5673#)jpc5gie^mw')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+
 ]
 
 MIDDLEWARE = [
