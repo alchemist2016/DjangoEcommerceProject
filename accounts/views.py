@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from accounts.forms import UserForm,UserProfileInfoForm
+from accounts.forms import UserForm, UserProfileInfoForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request,'accounts/index.html')
+    """Return index.html file"""
+    return render(request, 'accounts/index.html')
 
 
 @login_required
@@ -19,6 +20,8 @@ def special(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
 def register(request):
     registered = False
     if request.method == 'POST':
@@ -59,7 +62,8 @@ def user_login(request):
                 return HttpResponse("Your account was inactive.")
         else:
             print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
+            print("They used username: {} and password: {}".format(username,
+            password))
             return HttpResponse("Invalid login details given")
     else:
         return render(request, 'accounts/login.html', {})
