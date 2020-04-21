@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECURITY_KEY', 'ba&by@8snpxvgldfd8sxvaf316acs8+3@-5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io']
+ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io',
+'django-ecommerce-project-app.herokuapp.com',]
 
 
 # Application definition
