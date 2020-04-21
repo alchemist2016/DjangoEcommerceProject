@@ -17,9 +17,9 @@ if path.exists("env.py"):
     import env
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
-STATIC_DIR = os.path.join(BASE_DIR,'static')
-MEDIA_DIR = os.path.join(BASE_DIR,'media')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECURITY_KEY', 'ba&by@8snpxvgldfd8sxvaf316acs8+3@-5
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io',
-'django-ecommerce-project-app.herokuapp.com',]
+os.environ.get('HOSTNAME'),]
 
 
 # Application definition
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'eCommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.parse("postgres://iukiohsrxdcxlx:decdd6909609f5a5e9362bb5affd9060cf419614dc04c695fc9a186cc2b56595@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/db5vr1b6l8psgv")}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
