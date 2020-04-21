@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 from os import path
 if path.exists("env.py"):
     import env
@@ -79,12 +80,12 @@ WSGI_APPLICATION = 'eCommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {'default': dj_database_url.parse("postgres://iukiohsrxdcxlx:decdd6909609f5a5e9362bb5affd9060cf419614dc04c695fc9a186cc2b56595@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/db5vr1b6l8psgv")}
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
