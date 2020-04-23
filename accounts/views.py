@@ -44,9 +44,9 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileInfoForm()
     return render(request, 'accounts/registration.html',
-                          {'user_form': user_form,
-                           'profile_form': profile_form,
-                           'registered': registered})
+                           {'user_form': user_form,
+                            'profile_form': profile_form,
+                            'registered': registered})
 
 
 def user_login(request):

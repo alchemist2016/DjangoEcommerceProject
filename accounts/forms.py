@@ -5,10 +5,11 @@ from django.core.exceptions import ValidationError
 
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(label="Password", widget=forms.PasswordInput())
+    password1 = forms.CharField(label="Password Confirmation", widget=forms.PasswordInput())
     class Meta():
         model = User
-        fields = ('username','password','email')
+        fields = ('username', 'password', 'password1', 'email')
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -17,13 +18,16 @@ class UserForm(forms.ModelForm):
             raise forms.ValidationError("Email address must be unique")
         return email
 
-    def clean_password(self):
+    def clean_password1(self):
         password = self.cleaned_data.get('password')
-        if not password:
+        password1 = self.cleaned_data.get('password1')
+        if not password or not password1:
             raise ValidationError("Please confirm your password!")
-        return password
+        if password != password1:
+            raise ValidationError("Your passwords don't match!")
+        return password1
         
-        
+
 class UserProfileInfoForm(forms.ModelForm):
      class Meta():
          model = UserProfileInfo
