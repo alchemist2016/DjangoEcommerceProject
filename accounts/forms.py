@@ -27,9 +27,16 @@ class UserForm(forms.ModelForm):
         if password != password1:
             raise ValidationError("Your passwords don't match!")
         return password1
-        
+
 
 class UserProfileInfoForm(forms.ModelForm):
      class Meta():
          model = UserProfileInfo
          fields = ('portfolio_site','profile_pic')
+
+
+class UserLoginForm(forms.Form):
+    """Form to be used to log users in"""
+
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

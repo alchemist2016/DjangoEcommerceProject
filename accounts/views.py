@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from accounts.forms import UserForm, UserProfileInfoForm
+from accounts.forms import UserForm, UserProfileInfoForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -67,7 +67,8 @@ def user_login(request):
             password))
             return HttpResponse("Invalid login details given")
     else:
-        return render(request, 'accounts/login.html', {})
+        login_form = UserLoginForm()
+        return render(request, 'accounts/login.html', {"login_form": login_form})
 
 
 def user_profile(request):
