@@ -1,10 +1,13 @@
-from django.conf.urls import url
-from accounts import views
+from django.conf.urls import url, include
+from .views import *
+from accounts.views import user_logout, user_login, register, user_login,user_profile
+from accounts import url_reset
 
-# set the namespace
-app_name = 'accounts'
 
 urlpatterns = [
-    url(r'^register/$', views.register, name='register'),
-    url(r'^user_login/$', views.user_login, name='user_login'),
+    url(r'^register/$', register, name='register'),
+    url(r'^user_login/$', user_login, name='user_login'),
+    url(r'^user_profile/$', user_profile, name='profile'),
+    url(r'^logout/$', user_profile, name='logout'),
+    url(r'^password_reset/', include(url_reset), name='password_reset'),
 ]

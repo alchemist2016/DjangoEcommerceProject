@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.models import User
 from accounts.forms import UserForm, UserProfileInfoForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -67,3 +68,8 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, 'accounts/login.html', {})
+
+
+def user_profile(request):
+    """The user's profile page"""
+    return render(request, 'accounts/profile.html')
