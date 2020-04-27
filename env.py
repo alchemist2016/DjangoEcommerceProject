@@ -8,3 +8,6 @@ os.environ.setdefault("STRIPE_PUBLISHABLE", "pk_test_UMjeQLCNbw9Q1uikQO3H557W00v
 os.environ.setdefault("STRIPE_SECRET", "sk_test_XVIvVXHYroBw7WpHjtguzWhX00dmXohyQW")
 
 os.environ.setdefault("DATABASE_URL", "postgres://iukiohsrxdcxlx:decdd6909609f5a5e9362bb5affd9060cf419614dc04c695fc9a186cc2b56595@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/db5vr1b6l8psgv")
+
+os.environ.setdefault("AWS_ACCESS_KEY_ID", "AKIAXVWR3UDNYMCTX2QZ")
+os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "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")
