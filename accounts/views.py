@@ -62,10 +62,8 @@ def user_login(request):
             else:
                 return HttpResponse("Your account was inactive.")
         else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,
-            password))
-            return HttpResponse("Invalid login details given")
+            print("You have to register your account first in order to login!")
+            return HttpResponseRedirect(reverse('register'))
     else:
         login_form = UserLoginForm()
         return render(request, 'accounts/login.html', {"login_form": login_form})
