@@ -1,5 +1,4 @@
 from django import forms
-from accounts.models import UserProfileInfo
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
@@ -29,10 +28,7 @@ class UserForm(forms.ModelForm):
         return password1
 
 
-class UserProfileInfoForm(forms.ModelForm):
-     class Meta():
-         model = UserProfileInfo
-         fields = ('portfolio_site','profile_pic')
+
 
 
 class UserLoginForm(forms.Form):
