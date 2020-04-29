@@ -1,15 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import User
 from accounts.forms import UserForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
-from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 
 def index(request):
     """Return index.html file"""
-    return render(request, 'accounts/index.html')
+    return render(request, 'index.html')
 
 
 @login_required
@@ -38,7 +37,7 @@ def register(request):
     else:
         user_form = UserForm()
         
-    return render(request, 'accounts/registration.html',
+    return render(request, 'registration.html',
                            {'user_form': user_form,
                             'registered': registered})
 
@@ -59,9 +58,7 @@ def user_login(request):
             return HttpResponseRedirect(reverse('register'))
     else:
         login_form = UserLoginForm()
-        return render(request, 'accounts/login.html', {"login_form": login_form})
-
+        return render(request, 'login.html', {"login_form": login_form})
 
 def user_profile(request):
-    """The user's profile page"""
-    return render(request, 'accounts/profile.html')
+    return render(request, 'profile.html')

@@ -1,13 +1,8 @@
 body {
     font-family: Arial;
-    font-size: 25px;
-    line-height: 1.42857143;
-    color: #555555;
-    background-color: #ffffff;
 }
 
-footer {
-}
+
 
 .icon-bar {
     background-color: #fff;
@@ -57,8 +52,70 @@ caption p {
 .panel-body {
     height: 100%;
     border: 1px solid #ddd;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .product-description {
     min-height: 40px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* Contact Us */
+
+.form-control {
+    display: block;
+    width: 50%;
+    height: 100px;  
+}
+
+.signup-form{
+  margin-top: 50px;
+  color: white;
+  max-width: 100%;
+  padding-bottom: 100px; 
+ 
+}
+.form-group {
+    margin-bottom: 40px;
+}
+.signup-form  h2 {
+color: rgb(8, 8, 8);
+  margin-bottom: 100px;
+  padding-top: 20px;
+}
+form.signup-form {
+    margin-left: 15%;
+}
+.signup-form p {
+    font-size: 25px;
+}
+.text-input{
+  color:white;
+  width: 100%;
+  font-weight: normal;
+  margin: 5px 0 20px 0;
+  border: 1px solid  white;
+  border-radius: 2px;
+  height: 5rem;
+  
+}
+
+label {
+    font-size: 1.5rem;
+    color: white;
+}
+.join-button{
+  margin-top: 20px;
+  padding: 15px 32px 15px 32px;
+  text-align: center;
+  font-size: 100%;
+  background-color:#4db6ac;
+  color:white;
+  display: block;
+  
 }

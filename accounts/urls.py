@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from .views import *
-from accounts.views import user_logout, user_login, register, user_login,user_profile
+from accounts.views import user_logout, user_login, register, user_profile
 from accounts import url_reset
 
 

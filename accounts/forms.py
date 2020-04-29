@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 
 
+
 class UserForm(forms.ModelForm):
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
     password1 = forms.CharField(label="Password Confirmation", widget=forms.PasswordInput())
@@ -36,3 +37,6 @@ class UserLoginForm(forms.Form):
 
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+
+
