@@ -6,6 +6,8 @@ Hello from our online shop QuickMart. We have a range of products new and second
 With our easy registration and payment form you can surf and shop on our website within minutes.
 Feel free to look around and Thank you for your visit.
 
+Responsive design
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 ---
 ## Summary
