@@ -56,8 +56,12 @@ caption p {
     margin-right: 25px;
 }
 
+.panel-body > p {
+    text-align: center;
+}
+
 .product-description {
-    min-height: 40px;
+    text-align: center;
 }
 
 footer {
@@ -65,14 +69,8 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 /* Contact Us */
-
-.form-control {
-    display: block;
-    width: 50%;
-    height: 100px;  
-}
-
 .signup-form{
   margin-top: 50px;
   color: white;
@@ -80,6 +78,7 @@ footer {
   padding-bottom: 100px; 
  
 }
+
 .form-group {
     margin-bottom: 40px;
 }
