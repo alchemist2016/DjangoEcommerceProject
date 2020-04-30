@@ -98,54 +98,10 @@ All links are target_blank marked and will bring user to a new page opening thus
 
 #### Further description of buttons, icons and elements used is in the next section [Features](#existing-features).
 
-Wireframes
-Home page
+### Wireframes
 
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/Home.jpg?raw=true" width=“500” height=“300” alt=“Home page”>
-</p>
 
-Trails page
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/Trails.jpg?raw=true" width=“400” height=“500” alt=“Marketplace page”>
-</p>
-
-Edit Trail
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/EditTrail.jpg?raw=true" width=“500” height=“300” alt=“View advert”>
-</p>
-
-Add Trail
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/AddTrail.jpg?raw=true" width=“400” height=“500” alt=“Add/Edit page”>
-</p>
-
-Members
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/Members.jpg?raw=true" width=“400” height=“500” alt=“Add/Edit page”>
-</p>
-
-Edit Member
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/EditMember.jpg?raw=true" width=“400” height=“500” alt=“Add/Edit page”>
-</p>
-
-Add Member
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/AddMember.jpg?raw=true" width=“400” height=“500” alt=“Add/Edit page”>
-</p>
-
-Contact
-
-<p align=“center”>
-<img src="https://github.com/alchemist2016/Milestone3/blob/master/static/wireframes/ContactUs.jpg?raw=true" width=“400” height=“500” alt=“Add/Edit page”>
-</p>
+![alt text](https://github.com/alchemist2016/DjangoEcommerceProject/tree/master/readcontents/wireframes "Logo Title Text 1")
 
 ### Surface 
 I am using throughout the website consistent coloring of Nav Bar and Footer as well as colouring of the forms, buttons, and fonts.
