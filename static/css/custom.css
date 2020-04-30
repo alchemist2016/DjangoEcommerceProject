@@ -82,6 +82,7 @@ footer {
 .form-group {
     margin-bottom: 40px;
 }
+
 .signup-form  h2 {
 color: rgb(8, 8, 8);
   margin-bottom: 100px;
@@ -106,7 +107,7 @@ form.signup-form {
 
 label {
     font-size: 1.5rem;
-    color: white;
+    color: black;
 }
 .join-button{
   margin-top: 20px;
@@ -116,5 +117,4 @@ label {
   background-color:#4db6ac;
   color:white;
   display: block;
-  
 }
