@@ -122,3 +122,8 @@ label {
   color:white;
   display: block;
 }
+
+.form-control {
+    display: block;
+    width: 50%;
+}
