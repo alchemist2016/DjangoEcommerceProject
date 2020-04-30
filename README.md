@@ -7,7 +7,7 @@ With our easy registration and payment form you can surf and shop on our website
 Feel free to look around and Thank you for your visit.
 
 Responsive design
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/alchemist2016/DjangoEcommerceProject/blob/master/readcontents/Responsive.PNG "Logo Title Text 1")
 
 ---
 ## Summary
