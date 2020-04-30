@@ -30,8 +30,8 @@
     {% endfor %}
 </div>
 <div class="row">
-    <p> Total</p>
-    <p><i class="fa fa-eur" aria-hidden="true"></i>{{ total }}</p>
+    <p> Total </p>
+    <p> {{ total }} <i class="fa fa-eur" aria-hidden="true"></i></p>
 </div>
 
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
