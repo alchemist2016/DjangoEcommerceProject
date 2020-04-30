@@ -60,6 +60,10 @@ caption p {
     text-align: center;
 }
 
+.panel-body > h3 {
+    text-align: center;
+}
+
 .product-description {
     text-align: center;
 }
