@@ -30,7 +30,6 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products, name='index'),
-    url(r'^special/', views.special, name='special'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^products/', include(urls_products)),
