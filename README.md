@@ -218,10 +218,10 @@ A local repository was intialized using Github. Regular changes were commited to
 
 The process for deployment on Heroku was:
 
-  -Create a new app in Heroku with "west-cork-trail-runners"
+  -Create a new app in Heroku 
   - In the workspace, log into Heroku with command Line and the set of commands provided to create a connection between the application and Heroku.
   - Create a new Git repository and add the files, then associate the Heroku application and push to Heroku once the requirements.txt file and Procfile have been created.
-  - Configuration variables had to be set in order to get the project running. These had to be set in both the Gitpod IDE and on Heroku. These included, PORT, IP and Mongo URL.
+  - Configuration variables must set in order to get the project running. These must be set in both the Gitpod IDE and on Heroku
   - Open the app to test successful deployment.
 
 To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/alchemist2016/Milestone3.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.  
@@ -230,8 +230,9 @@ Further help with cloning can be found on this GitHub Help [page](https://help.g
 
 ## Some of the commands used in deployment
 The app was written and developed on Gitpod and was regularly committed and pushed to Github and Heroku.
-The following pip commands are necessary for the app to function properly. pip3 install django==1.11.29
-pip3 freeze > requirements.txt
+The following pip commands are necessary for the app to function properly. 
+<pre><code>
+pip3 install django==1.11.29
 django-admin startproject file_name .
 django-admin startapp app_name
 python3 manage.py migrate
@@ -245,23 +246,31 @@ pip3 install django-storages
 pip3 install boto3
 pip3 install stripe
 pip3 install gunicorn
-Add all secret keys to heroku config vars and add DISABLE_COLLECTSTATIC and make it’s value 1
+</code></pre>
+Add all secret keys to heroku config vars and add DISABLE_COLLECTSTATIC and make itâ€™s value 1
 python3 manage.py collectstatic
 Need to run this after any changes to static files in the IDE
-Heroku required that some variables are set up in order to deploy the app. All secret keys and passwords used in the env.py file which is ignored by Github in the .gitignore file are stored in the config vars section of Heroku. In order to send the app to Heroku I first had to login into Heroku through the Gitpod IDE and then push all the commits to Heroku so any changes could be added to the app, on the last few pushes the Debug was set to False
-To set up and install AWS I followed the instruction video on the Code Institutes training and the following steps were taken. If you don't have an amazon account you need to open one and select amazon web services (AWS) and then S3.
+Heroku required that some variables are set up in order to deploy the app. All secret keys and passwords used in the env.py 
+file which is ignored by Github in the .gitignore file are stored in the config vars section of Heroku. In order to send the app to 
+Heroku I first had to login into Heroku through the Gitpod IDE and then push all the commits to Heroku so any changes could be added 
+to the app, on the last few pushes the Debug was set to False
+To set up and install AWS I followed the instruction video on the Code Institutes training and the following steps were taken. If you don't 
+have an amazon account you need to open one and select amazon web services (AWS) and then S3.
 In AWS S3
 Create Bucket
 Unique name ie - vladimir-ecommerce Ireland Allow public access
 Create
 Open bucket Properties - staic website hosting Index.html
 Error.html
-Permissions Cors configuraton Add our arn keeping /*
+Permissions Cors configuraton Add our ARN keeping /*
 IAM Create a group Name it close to buket name - neils ecommerce-group Next and create group
-Greate policy Import managed polcy Choose S3 full policy Import Change string to a list [ ] The first item in the list is going to be our own ARN which we used earlier, but it has been closed in quotes The second item in the list again in quotes is going to be the same ARN This time we append a forward slash and an asterisk Review and name it in association with the bucket - vladimir-eccomerce-policy
+Create policy Import managed policy Choose S3 full policy Import Change string to a list [ ] The first item in the list is going to be our own ARN which
+we used earlier, but it has been closed in quotes The second item in the list again in quotes is going to be the same ARN This time we append a forward 
+ slash and an asterisk Review and name it in association with the bucket - vladimir-ecommerce-policy
 Add policy to group Got to groups and select my group, goto permissions tap in group search for the policy we created and check the box and attach
 Create user New user Name - vladimir-eccomerce-user Allow programatic access No keys or tags Download CSV file
-Change our files Pip3 install django-storages Pip3 install boto3 Add this to settings.py above static_url
+Add this to settings.py above static_url
+<pre><code>
 AWS_S3_OBJECT_PARAMETERS = {
 'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
 'CacheControl': 'max-age=94608000'
@@ -272,11 +281,18 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+</code></pre>
 Add AWS keys to env.py file using CSV information next Python3 manage.py collectstatic Yes to change warning
 Custom_storages.py file
-from django.conf import settings from storages.backends.s3boto3 import S3Boto3Storage class StaticStorage(S3Boto3Storage):
-location = settings.STATICFILES_LOCATION class MediaStorage(S3Boto3Storage): location = settings.MEDIAFILES_LOCATION ADD these changes to staticfiles in settings.py
-STATICFILES_LOCATION = 'static' STATICFILES_STORAGE = 'custom_storages.StaticStorage' And Python3 manage.py collectstatic
+<pre><code>
+from django.conf import settings 
+from storages.backends.s3boto3 import S3Boto3Storage 
+class StaticStorage(S3Boto3Storage):
+  location = settings.STATICFILES_LOCATION class MediaStorage(S3Boto3Storage): location = settings.MEDIAFILES_LOCATION ADD these changes to staticfiles in settings.py
+STATICFILES_LOCATION = 'static' 
+STATICFILES_STORAGE = 'custom_storages.StaticStorage' 
+</code></pre>
+And Python3 manage.py collectstatic
 Do similar action for media To fix console errors In permissions - Cors configuration Copy the GET line and change it to HEAD to read font awesome CSS properly
 [Back to top](#summary)
 
