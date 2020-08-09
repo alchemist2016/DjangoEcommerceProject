@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect
 from accounts.forms import UserForm, UserLoginForm
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -14,6 +15,8 @@ def index(request):
 @login_required
 def user_logout(request):
     logout(request)
+    messages.success(
+                    request, "You have successfully logged out. See you again!")
     return HttpResponseRedirect(reverse('index'))
 
 
@@ -38,6 +41,9 @@ def register(request):
                 same page, we get POST requests when an auth form is not filled completely and we try to reload the
                 page. We expect GET requests but get POST ones.  
             '''
+            name = request.user.username
+            messages.success(
+                    request, "You have successfully registered. Welcome %s!" % name)
             return redirect(reverse('index'))
         else:
             print(user_form.errors)
@@ -68,6 +74,9 @@ def authenticate_user(request, username, password):
     if user:
         if user.is_active:
             login(request, user)
+            name = request.user.username
+            messages.success(
+                    request, "Welcome %s." % name)
             return HttpResponseRedirect(reverse('index'))
         else:
             return HttpResponse("Your account was inactive.")

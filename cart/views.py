@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -23,6 +25,8 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
+    product = get_object_or_404(Product, pk=id)
+    messages.success(request, 'You have successfuly added - "%s" x%s - to your shopping cart!' % (product.name, quantity))
     return redirect(reverse('index'))
 
 
@@ -38,4 +42,6 @@ def adjust_cart(request, id):
         cart.pop(id)
 
     request.session['cart'] = cart
+    product = get_object_or_404(Product, pk=id)
+    messages.success(request, 'You have successfuly amended - "%s" - to quantity: %s - in your shopping cart!' % (product.name, quantity))
     return redirect(reverse('view_cart'))

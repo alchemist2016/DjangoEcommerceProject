@@ -2,10 +2,9 @@
 
 {% block content %}
 <section class="about" id="contact-form">
-  <div class="container">
-    <div class="alert alert-success">
-        <h5>Contact Us</h5>
-    </div>
+<div class="contact-us row justify-content-center">
+        <h1>Contact Us</h1>
+</div>
     <div class="signup-form">
         <!-- EmailJS function -->
         {# Used some bootstrap classes to make input borders #}
@@ -22,9 +21,10 @@
                 <label for="exampleFormControlTextarea3">Send us Your Enquiries</label>
                 <textarea class="form-control" name="info_request" id="exampleFormControlTextarea3" rows="7" required></textarea>
             </div>
-            <button class="join-button" type="submit" value="Submit">Submit</button>
+            <div class="row justify-content-center">
+            <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+            </div>
         </form>
     </div>
-  </div>
 </section>
 {% endblock %}

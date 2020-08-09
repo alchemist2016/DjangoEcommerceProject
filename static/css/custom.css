@@ -28,6 +28,19 @@ body {
     margin-bottom: 95px;
 }
 
+/* Registration.html */
+.jumbotron{
+    padding: 20px;
+}
+.registration-form{
+    margin: 50px auto 0px;
+    max-width: 70%;
+}
+
+/* Password reset */
+.password-reset{
+    margin-top: 15px;
+}
 /* Products.html */
 .product-row{
     margin-bottom: 100px
@@ -84,15 +97,22 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 80px;
 }
 
 /* Contact Us */
+.contact-us{
+    padding-top: 30px;
+    font-size: 35px;
+}
+
 .signup-form{
-  margin-top: 50px;
-  color: white;
-  max-width: 100%;
-  padding-bottom: 100px; 
- 
+  margin: 50px auto 30px;
+  color: rgb(211, 211, 211);
+  max-width: 60%;
+  padding: 15px 15px 30px; 
+ border: 1px solid rgba(0, 0, 0, 0.37);
+ border-radius: 5px;
 }
 
 .form-group {
@@ -171,4 +191,10 @@ label {
 }
 .social-icons > a:hover{
     color: rgb(35, 189, 240);
+}
+
+/* Messages */
+.alert-success{
+    text-align: center;
+    font-size: 20px;
 }

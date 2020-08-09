@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
-  <div class="container">
-    <div class="jumbotron">
+
+    <div class="jumbotron registration-form">
       <h1>Login here</h1>
 <form method="post" action="{% url 'user_login' %}">
           {% csrf_token %}
           {{ login_form | as_bootstrap }}
-<input type="submit" name="" value="Login">
+          <div class="row justify-content-center">
+<input class="btn btn-primary" type="submit" name="" value="Login">
+          </div>
 </form>
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+<p><a class="password-reset" href="{% url 'password_reset' %}">Reset Password</a></p>
 </div>
-  </div>
+
 {% endblock %}

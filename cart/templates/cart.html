@@ -6,13 +6,15 @@
 {% if total == 0 %}
 <br>
 <br>
+<div class="jumbotron registration-form">
     <div class="text-center">
         <h1>Your Cart is empty</h1>
         <br>
         <i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i>
         <br>
-        <h2>Please choose from our products <a href="{% url 'products' %}"> here</a></h2>
+        <h2>Please choose products from our <a href="{% url 'products' %}">Shop</a></h2>
     </div>
+</div>
 {% else %}
 <div class="row row-flex">
     {% for item in cart_items %}
