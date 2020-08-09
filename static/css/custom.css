@@ -27,6 +27,11 @@ body {
 .main-container{
     margin-bottom: 95px;
 }
+
+/* Products.html */
+.product-row{
+    margin-bottom: 100px
+}
 .product {
     background-size: contain;
     background-position: center center;
@@ -148,11 +153,18 @@ label {
 .input-group-btn{
     padding-left: 5px;
 }
+.checkout-btn{
+    width: 200px
+}
 
+/* Checkout.html */
+.checkout-total-sum{
+    margin-top: 20px;
+    font-size: 30px
+}
 /* Footer */
 .social-icons{
-    font-size: 40px;
-    padding-bottom: 5px;
+    font-size: 35px;
 }
 .social-icons > a {
     color: rgb(230, 230, 230);

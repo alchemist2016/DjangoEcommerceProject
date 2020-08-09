@@ -28,11 +28,7 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id):
     """Adjust the quantity of the specified product to the specified amount"""
-
-    if (int(request.POST.get('quantity'))) == 0:
-        return redirect(reverse('index'))
-    else:
-        quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity'))
 
     cart = request.session.get('cart', {})
 

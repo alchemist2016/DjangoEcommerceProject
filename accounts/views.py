@@ -38,7 +38,7 @@ def register(request):
                 same page, we get POST requests when an auth form is not filled completely and we try to reload the
                 page. We expect GET requests but get POST ones.  
             '''
-            return redirect(reverse('thank_you.html'))
+            return redirect(reverse('index'))
         else:
             print(user_form.errors)
     else:

@@ -50,8 +50,9 @@
   
 </div>
 <div class="row justify-content-center cart-total-sum">
-    <p> Total <i class="fa fa-eur" aria-hidden="true"></i>{{ total }}</p>
-    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+
+    <p class="col-12 text-center"> Total <i class="fa fa-eur" aria-hidden="true"></i>{{ total }}</p>
+    <a href="{% url 'checkout' %}" class="btn btn-success checkout-btn justify-content-center" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 
 </div>
 
