@@ -17,36 +17,44 @@
 <div class="row row-flex">
     {% for item in cart_items %}
     
-    <div class="panel-body">
+    <div class="col-12 col-md-4 col-lg-3">
+    <div class="product-card">
         
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
         
         <div class="caption">
-            <h3>{{ item.product.name }}</h3>
+            <h3 class="product-description">{{ item.product.name }}</h3>
             <p class="product-description">{{ item.product.description }}</p>
-            <p>{{ item.product.price }}<i class="fa fa-eur" aria-hidden="true"></i></p>
+            <p class="product-description">{{ item.product.price }}<i class="fa fa-eur" aria-hidden="true"></i></p>
             <p>
                 
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.product.id %}">
+                <form class="form-inline justify-content-center" method="post" action="{% url 'adjust_cart' item.product.id %}">
                     {% csrf_token %}
-                    <div class="form-group">
+                    <div class="form-group ">
                         <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
+                        <div class="input-group ">
+                            <!-- <p class="input-group-addon">Qty</p> -->
                             <input name="quantity" type="number" min="0" max="999" class="form-control" value="{{ item.quantity }}">
+                            <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                            </span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                    
                 </form>
             </p>
         </div>
-    </div>
+          </div> 
+           </div>
     {% endfor %}
+  
 </div>
-<div class="row">
-    <p> Total</p>
-    <p><i class="fa fa-eur" aria-hidden="true"></i>{{ total }}</p>
+<div class="row justify-content-center cart-total-sum">
+    <p> Total <i class="fa fa-eur" aria-hidden="true"></i>{{ total }}</p>
     <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+
 </div>
+
+
 {% endif %}
 {% endblock %}

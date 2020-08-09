@@ -23,13 +23,22 @@ body {
     background-color: #c67605;
 }
 
+/* Base.html */
+.main-container{
+    margin-bottom: 95px;
+}
 .product {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     width: 150px;
     height: 150px;
-    margin: 0 auto;
+    margin: 0px auto;
+}
+.product-card{
+    padding: 10px;
+    margin: 30px 0px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.303);
 }
 
 caption p {
@@ -128,4 +137,26 @@ label {
 
 #payment-form {
     margin-bottom: 100px;
+}
+
+/* Cart section */
+.cart-total-sum{
+    font-size: 30px;
+    padding: 50px;
+}
+
+.input-group-btn{
+    padding-left: 5px;
+}
+
+/* Footer */
+.social-icons{
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+.social-icons > a {
+    color: rgb(230, 230, 230);
+}
+.social-icons > a:hover{
+    color: rgb(35, 189, 240);
 }
