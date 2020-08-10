@@ -1,9 +1,10 @@
 from django.shortcuts import render, reverse, redirect
-from accounts.forms import UserForm, UserLoginForm
+from accounts.forms import UserLoginForm, UserRegistrationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from checkout.models import Order
 
 
 def index(request):
@@ -23,7 +24,7 @@ def user_logout(request):
 def register(request):
     registered = False
     if request.method == 'POST':
-        user_form = UserForm(data=request.POST)
+        user_form = UserRegistrationForm(data=request.POST)
 
         if user_form.is_valid():
             user = user_form.save()
@@ -45,12 +46,10 @@ def register(request):
             messages.success(
                     request, "You have successfully registered. Welcome %s!" % name)
             return redirect(reverse('index'))
-        else:
-            print(user_form.errors)
     else:
         if request.user.is_authenticated:
             registered = True
-        user_form = UserForm()
+        user_form = UserRegistrationForm()
 
     return render(request, 'registration.html',
                            {'user_form': user_form,
@@ -84,6 +83,7 @@ def authenticate_user(request, username, password):
         print("You have to register your account first in order to login!")
         return HttpResponseRedirect(reverse('register'))
 
-
+@login_required
 def user_profile(request):
-    return render(request, 'profile.html')
+    orders = Order.objects.filter(user=request.user).order_by('-date')
+    return render(request, 'profile.html', {'orders': orders})

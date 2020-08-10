@@ -13,6 +13,8 @@ body {
 .badge {
     padding-left: 9px;
     padding-right: 9px;
+    width:25px;
+    height: 18px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px;
@@ -23,6 +25,16 @@ body {
     background-color: #c67605;
 }
 
+/* Navbar */
+.navbar-brand{
+    padding-left: 50px;
+}
+.search-bar{
+    margin: 0px 50px;
+}
+.nav-list{
+    margin-left: auto;
+}
 /* Base.html */
 .main-container{
     margin-bottom: 95px;
@@ -39,7 +51,35 @@ body {
 
 /* Password reset */
 .password-reset{
-    margin-top: 15px;
+    max-width: 500px;
+    margin: 50px auto 0px;
+    font-size: 18px;
+}
+.password-reset > p{
+    font-size: 16px;
+}
+
+/* Orders */
+.order-date-margin{
+    padding-top: 2px;
+    margin: 0 0 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition-duration: 0.25s;
+    text-align: center;
+    background-color: transparent;
+}
+.order-card-body{
+    padding: 30px 0 10px;
+}
+table{
+    /* width: 95%; */
+    margin: auto;
+}
+td, th {
+  border: 1px solid #3a3a3a;
+  text-align: left;
+  padding: 8px;
 }
 /* Products.html */
 .product-row{
@@ -102,6 +142,7 @@ footer {
 
 /* Contact Us */
 .contact-us{
+    width: 100%;
     padding-top: 30px;
     font-size: 35px;
 }
@@ -109,7 +150,7 @@ footer {
 .signup-form{
   margin: 50px auto 30px;
   color: rgb(211, 211, 211);
-  max-width: 60%;
+  max-width: 600px;
   padding: 15px 15px 30px; 
  border: 1px solid rgba(0, 0, 0, 0.37);
  border-radius: 5px;
@@ -197,4 +238,11 @@ label {
 .alert-success{
     text-align: center;
     font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .registration-form{
+    margin-top: 20px;
+    max-width: 100%;
+}
 }

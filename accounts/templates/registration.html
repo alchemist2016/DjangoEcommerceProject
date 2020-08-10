@@ -2,8 +2,6 @@
 {% load bootstrap_tags %}
 {% load static %}
 {% block content %}
-{% csrf_token %}
-
     <div class="jumbotron registration-form">
       {% if registered %}
         <h1>Thank you for registering!</h1>
@@ -12,7 +10,9 @@
         <h6>Just fill out the form.</h6>
 <form enctype="multipart/form-data" method="POST">
           {% csrf_token %}
+          <fieldset class="form-group">
           {{ user_form | as_bootstrap }}
+          </fieldset>
           <div class="row justify-content-center">
           <button type="submit" class="btn btn-success">Submit</button>
           </div>
