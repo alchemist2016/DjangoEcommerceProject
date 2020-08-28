@@ -23,9 +23,12 @@ class UserRegistrationForm(UserCreationForm):
             raise forms.ValidationError(u'Email address must be unique')
         return email
 
-    def clean_password1(self):
+    def clean_password(self):
         password = self.cleaned_data.get('password1')
         password1 = self.cleaned_data.get('password2')
+        print(password)
+        print(password1)
+
         if not password or not password1:
             raise ValidationError("Please confirm your password!")
         if password != password1:
@@ -38,6 +41,3 @@ class UserLoginForm(forms.Form):
 
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
-
-
-

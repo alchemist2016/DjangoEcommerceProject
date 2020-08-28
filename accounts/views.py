@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse, redirect
 from accounts.forms import UserLoginForm, UserRegistrationForm
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -10,7 +10,6 @@ from checkout.models import Order
 def index(request):
     """Return index.html file"""
     return render(request, 'index.html')
-
 
 
 @login_required
@@ -27,9 +26,9 @@ def register(request):
         user_form = UserRegistrationForm(data=request.POST)
 
         if user_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
+            user_form.save()
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
 
             # We need to authenticate a user, otherwise the system will show him the 'register' route
             username = user_form.cleaned_data.get('username')
