@@ -8,10 +8,10 @@
     <div class="signup-form">
         <!-- EmailJS function -->
         {# Used some bootstrap classes to make input borders #}
-        <form onsubmit="return sendMail(this);">
+        <form id="contactForm" onsubmit="return sendMail(this);">
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" class="form-control" name="name" id="fullname" required>
+                <input type="text" class="form-control" name="name" id="fullname" placeholder="Enter Name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
