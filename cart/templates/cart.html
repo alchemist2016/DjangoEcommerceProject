@@ -28,8 +28,7 @@
             <h3 class="product-description">{{ item.product.name }}</h3>
             <p class="product-description">{{ item.product.description }}</p>
             <p class="product-description">{{ item.product.price }}<i class="fa fa-eur" aria-hidden="true"></i></p>
-            <p>
-                
+            <p>       
                 <form class="form-inline justify-content-center" method="post" action="{% url 'adjust_cart' item.product.id %}">
                     {% csrf_token %}
                     <div class="form-group ">

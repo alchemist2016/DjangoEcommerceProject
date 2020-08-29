@@ -188,11 +188,12 @@ STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 LOGIN_URL = '/accounts/user_login/'
 
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
+
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

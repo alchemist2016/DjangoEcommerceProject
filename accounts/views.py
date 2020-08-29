@@ -38,8 +38,8 @@ def register(request):
 
             '''
                 The best practice of authentication is to redirect a user to a new page. If we try to stay at the
-                same page, we get POST requests when an auth form is not filled completely and we try to reload the
-                page. We expect GET requests but get POST ones.  
+                same page, we get POST requests when an auth form is not filled completely and we try to reload the 
+                page. We expect GET requests but get POST ones.
             '''
             name = request.user.username
             messages.success(
@@ -81,6 +81,7 @@ def authenticate_user(request, username, password):
     else:
         print("You have to register your account first in order to login!")
         return HttpResponseRedirect(reverse('register'))
+
 
 @login_required
 def user_profile(request):
