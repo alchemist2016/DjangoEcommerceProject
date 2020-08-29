@@ -16,10 +16,10 @@ from os import path
 if path.exists("env.py"):
     import env
 
-if os.environ.get('DEVELOPMENT'):
-    development = True
-else:
-    development = False
+# if os.environ.get('DEVELOPMENT'):
+#     development = True
+# else:
+#     development = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,10 +35,9 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io',
-os.environ.get('HOSTNAME'),]
+ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io', os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -161,6 +160,7 @@ AWS_STORAGE_BUCKET_NAME = 'vladimirs-ecommerce'
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_DEFAULT_ACL = None
 
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
