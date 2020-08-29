@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'checkout',
     'storages',
     'contact_us',
+    'search',
 
 ]
 
