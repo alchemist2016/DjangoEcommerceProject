@@ -16,10 +16,10 @@ from os import path
 if path.exists("env.py"):
     import env
 
-# if os.environ.get('DEVELOPMENT'):
-#     development = True
-# else:
-#     development = False
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +35,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = ['localhost', '8000-f703645e-4835-4e01-b4bd-b5f515640b08.ws-eu01.gitpod.io', os.environ.get('HOSTNAME')]
 
@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     STATIC_DIR,
-    
+
 ]
 
 MEDIAFILES_LOCATION = 'media'
@@ -186,7 +186,6 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 LOGIN_URL = '/accounts/user_login/'
-
 
 
 EMAIL_USE_TLS = True
